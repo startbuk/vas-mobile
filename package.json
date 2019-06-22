@@ -1,0 +1,42 @@
+{
+  "name": "VAS",
+  "description": "Voucher Authentication System",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "buildDebug": "(cd android && ./gradlew clean && ./gradlew assembleDebug)",
+    "buildRelease": "(cd android && ./gradlew clean && ./gradlew assembleRelease)",
+    "sign": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore dcash.keystore android/app/build/outputs/apk/app-release-unsigned.apk alias_name",
+    "zip": "~/Library/Android/Sdk/build-tools/23.0.1/zipalign -v 4 android/app/build/outputs/apk/app-release-unsigned.apk android/app/build/outputs/apk/app-release.apk"
+  },
+  "dependencies": {
+    "link": "^0.1.5",
+    "native-base": "^2.12.1",
+    "react": "16.8.3",
+    "react-native": "0.59.8",
+    "react-native-barcode-builder": "^1.0.5",
+    "react-native-barcode-scanner-google": "^1.4.2",
+    "react-native-camera": "^1.2.0",
+    "react-native-fab": "^1.0.7",
+    "react-native-flat-header": "^1.0.6",
+    "react-native-permissions": "^1.1.1",
+    "react-native-qrcode-scanner": "^1.0.1",
+    "react-native-router-flux": "^4.0.6",
+    "react-native-vector-icons": "^5.0.0",
+    "react-navigation": "^2.11.2",
+    "tcomb-form-native": "^0.6.15"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.5",
+    "@babel/runtime": "7.4.5",
+    "babel-jest": "24.8.0",
+    "jest": "24.8.0",
+    "metro-react-native-babel-preset": "0.54.1",
+    "react-test-renderer": "16.8.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
